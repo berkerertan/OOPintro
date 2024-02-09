@@ -1,4 +1,5 @@
-﻿using OOPintro.Entities;
+﻿using OOPintro.DataAccess.Abstracts;
+using OOPintro.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OOPintro.DataAccess.Concretes.InMemory
 {
-    public class ImProductDal
+    public class ImProductDal : IProductDal
     {
         public List<Product> products = new List<Product>();
 

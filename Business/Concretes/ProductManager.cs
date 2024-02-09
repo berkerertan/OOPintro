@@ -1,4 +1,5 @@
-﻿using OOPintro.DataAccess.Concretes.InMemory;
+﻿using OOPintro.DataAccess.Abstracts;
+using OOPintro.DataAccess.Concretes.InMemory;
 using OOPintro.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,21 @@ namespace OOPintro.Bussiness.Concretes
 {
     public class ProductManager
     {
-        ImProductDal productDal = new ImProductDal();
+        IProductDal _productDal;
 
+        public ProductManager(IProductDal productDal)
+        {
+            _productDal = productDal;
+        }
         public void Add(Product product)
         {
             //iş kuralları business rules
             
-            productDal.Add(product);
+            _productDal.Add(product);
         }
         public List<Product> GetProducts() 
         {
-            return productDal.GetProducts();
+            return _productDal.GetProducts();
         }
     }
 }

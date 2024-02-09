@@ -1,4 +1,5 @@
-﻿using OOPintro.DataAccess.Concretes.InMemory;
+﻿using OOPintro.DataAccess.Abstracts;
+using OOPintro.DataAccess.Concretes.InMemory;
 using OOPintro.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,22 @@ namespace OOPintro.Business.Concretes
 {
     public class CategoryManager
     {
-        ImCategoryDal categoryDal = new ImCategoryDal();
 
+
+        ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
         public void Add(Category category)
         {
             //iş kuralları business rules
 
-            categoryDal.Add(category);
+            _categoryDal.Add(category);
         }
         public List<Category> GetCategory()
         {
-            return categoryDal.GetCategories();
+            return _categoryDal.GetCategories();
         }
     }
 }

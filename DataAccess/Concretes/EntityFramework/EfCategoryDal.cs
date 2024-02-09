@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPintro.DataAccess.Concretes.InMemory
+namespace OOPintro.DataAccess.Concretes.EntityFramework
 {
-    public class ImCategoryDal : ICategoryDal
+    public class EfCategoryDal:ICategoryDal
     {
-
         List<Category> categories = new List<Category>();
-        public ImCategoryDal()
+        public EfCategoryDal()
         {
             categories.Add(new Category { Id = 1, Name = "Sebzeler" });
             categories.Add(new Category { Id = 2, Name = "Meyveler" });
@@ -22,7 +21,7 @@ namespace OOPintro.DataAccess.Concretes.InMemory
         public void Add(Category category)
         {
             categories.Add(category);
-            
+
         }
 
         public List<Category> GetCategories()

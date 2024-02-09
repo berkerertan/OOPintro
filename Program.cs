@@ -1,5 +1,8 @@
 ﻿using OOPintro.Business.Concretes;
 using OOPintro.Bussiness.Concretes;
+using OOPintro.DataAccess.Abstracts;
+using OOPintro.DataAccess.Concretes.EntityFramework;
+using OOPintro.DataAccess.Concretes.InMemory;
 using OOPintro.Entities;
 
 namespace OOPintro
@@ -18,9 +21,9 @@ namespace OOPintro
             product1.DiscountRate = 10;
 
 
-            Product product2 = new Product(2,"GSM","Samsung bişey",70000);
+            Product product2 = new Product(2, "GSM", "Samsung bişey", 70000);
 
-            ProductManager productManager = new ProductManager();
+            ProductManager productManager = new ProductManager(EfProductDal());
             productManager.Add(product1);
 
             foreach (var product in productManager.GetProducts())
@@ -32,7 +35,7 @@ namespace OOPintro
             category1.Id = 6;
             category1.Name = "Tropik";
 
-            CategoryManager categoryManager = new CategoryManager();
+            CategoryManager categoryManager = new CategoryManager(EfCategoryDal());
             categoryManager.Add(category1);
 
             foreach (var item in categoryManager.GetCategory())
@@ -42,5 +45,7 @@ namespace OOPintro
 
 
         }
+
+
     }
 }

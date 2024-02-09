@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Business\Abstracts\" />
-    <Folder Include="DataAccess\Abstracts\" />
-    <Folder Include="DataAccess\Concretes\EntityFramework\" />
   </ItemGroup>
 
 </Project>
