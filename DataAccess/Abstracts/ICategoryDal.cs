@@ -9,7 +9,7 @@ namespace OOPintro.DataAccess.Abstracts
 {
     public interface ICategoryDal
     {
-        void Add(Category category);
-        List<Category> GetCategories();
+        public void Add(Category category);
+        public List<Category> GetCategories();
     }
 }

@@ -9,7 +9,7 @@ namespace OOPintro.DataAccess.Abstracts
 {
     public interface IProductDal
     {
-        void Add(Product product);
-        List<Product> GetProducts();
+        public void Add(Product product);
+        public List<Product> GetProducts();
     }
 }

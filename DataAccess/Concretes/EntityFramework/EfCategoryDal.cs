@@ -13,9 +13,9 @@ namespace OOPintro.DataAccess.Concretes.EntityFramework
         List<Category> categories = new List<Category>();
         public EfCategoryDal()
         {
-            categories.Add(new Category { Id = 1, Name = "Sebzeler" });
-            categories.Add(new Category { Id = 2, Name = "Meyveler" });
-            categories.Add(new Category { Id = 3, Name = "Bakliyat" });
+            categories.Add(new Category { Id = 1, Name = "Sebzeler EF" });
+            categories.Add(new Category { Id = 2, Name = "Meyveler EF" });
+            categories.Add(new Category { Id = 3, Name = "Bakliyat EF" });
 
         }
         public void Add(Category category)
